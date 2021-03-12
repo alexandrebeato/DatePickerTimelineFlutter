@@ -224,4 +224,11 @@ class DatePickerController {
     int offset = date.difference(_datePickerState.widget.startDate).inDays + 1;
     return (offset * _datePickerState.widget.width) + (offset * 6);
   }
+
+  /// Sets the date with the animate option
+  void selectDate(DateTime date, {bool animate = false}) {
+    _datePickerState._currentDate = date;
+
+    if (animate) animateToDate(date);
+  }
 }
